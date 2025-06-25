@@ -34,6 +34,8 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+    <link rel="stylesheet" href="assets/css/player.style.css" />
   </head>
   <body class="index-page">
     <header id="header" class="header d-flex align-items-center fixed-top">
@@ -100,31 +102,24 @@
       <!-- Portfolio Details Section -->
       <section id="portfolio-details" class="portfolio-details section">
         <div class="container" data-aos="fade-up">
-          <div class="portfolio-details-slider swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "navigation": {
-                  "nextEl": ".swiper-button-next",
-                  "prevEl": ".swiper-button-prev"
-                },
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                }
-              }
-            </script>
-            <div class="swiper-wrapper align-items-center">
-              <div class="swiper-slide">
-                <img src="assets/img/illustration/coming soon.jpg" alt="" />
-              </div>
-            </div>
+          <!-- Video Player -->
+          <div class="video-wrapper">
+            <div
+              id="player"
+              data-plyr-provider="youtube"
+              data-plyr-embed-id="YoO_Sp2sPg0"
+            ></div>
+          </div>
+
+          <!-- Informasi Video -->
+          <div class="video-info">
+            <h2>New Dark Ages</h2>
+            <p>Bad Religion</p>
+            <p>
+              Keterangan: Video ini menyoroti isu stunting di daerah pesisir
+              Sumatera berdasarkan data dari Dinas Kesehatan dan wawancara
+              lapangan.
+            </p>
           </div>
           <div class="row justify-content-between gy-4 mt-4"></div>
         </div>
@@ -248,5 +243,10 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Plyr JS -->
+    <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+    <script src="assets/js/player.js"></script>
+
   </body>
 </html>
