@@ -1,4 +1,4 @@
-fetch("/artikel-2025/list-kategori.json")
+fetch("/video/list-kategori.json")
   .then((res) => res.json())
   .then((data) => {
     const wrapper = document.getElementById("mix-faq");
@@ -28,14 +28,16 @@ fetch("/artikel-2025/list-kategori.json")
       // Ambil satu kategori pertama saja untuk keperluan sorting (data-kategori)
       div.setAttribute("data-kategori", kategoriClass.split(" ")[0]);
 
+      // (1) Default gambar jika item.image tidak tersedia
+      const gambar = item.image || "assets/img/services/default.webp";
+
       div.innerHTML = `
+        <img src="${gambar}" alt="${item.title}" class="img-fluid mb-3 rounded">
         <h3>${String(index + 1).padStart(2, "0")} ${item.title}</h3>
         <div class="faq-content">
           <p><strong>Penulis:</strong> ${penulisGabung}</p>
           <p>${item.content}</p>
-          <a href="${
-            item.url
-          }" class="btn btn-sm btn-outline-success mt-2">Baca lengkap...</a>
+          <a href="${item.url}" class="btn btn-sm btn-outline-success mt-2">Baca lengkap...</a>
         </div>
       `;
 
