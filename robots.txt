@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /drafts/
+Disallow: /private/
+Allow: /
+
+Sitemap: https://video.jurnalisme-data.com/sitemap.xml
